@@ -1,12 +1,17 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
-const topics = [
-  'Scratch',
-  'Construct 2',
-  'Figma',
-  'HTML&CSS',
-]
+let topics = ref([])
+onMounted(() => {
+  // fetching config
+  fetch('http://localhost/main.php')
+    .then(r => r.json())
+    .then(r => {
+      console.log(r)
+      topics.value = r.topics
+      console.log(topics.value)
+    })
+})
 
 const formState = ref({
   topic: null,
