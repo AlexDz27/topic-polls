@@ -11,4 +11,4 @@ Current steps to deploy:
   6. В main.php поменять в header на https://rainlab.by
   7. В js-файле поменять на https://rainlab.by/ko/topic-poll/server-side/main.php
   8. Сделать ../ вместо ../.. в main.php для curPollConfig.json
-
+  (9.) Поместить favicon
