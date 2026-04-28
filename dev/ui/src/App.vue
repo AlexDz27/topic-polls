@@ -25,7 +25,10 @@ function submitForm() {
 
 <template>
   <main class="cont">
-    <h1 class="c" style="margin-bottom: 3rem; font-size: 1.7rem;">Анонимный опрос: Желаемая тема для личного проекта на открытом уроке</h1>
+    <div class="c">
+      <h1 class="title">Желаемая тема для личного проекта на открытом уроке</h1>
+      <p class="i" style="margin-top: 0; margin-bottom: 3rem; font-size: .9em">(опрос анонимный)</p>
+    </div>
 
     <form @submit.prevent="submitForm">
       <div class="form-field">
