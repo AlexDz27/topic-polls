@@ -3,10 +3,10 @@
 header('Access-Control-Allow-Origin: http://localhost:5173');
 
 $curPollConfig = json_decode(
-  file_get_contents('../curPollConfig.json'), true
+  file_get_contents('../../curPollConfig.json'), true
 );
 $allTopics = json_decode(
-  file_get_contents('../data/topics.json'), true
+  file_get_contents('data/topics.json'), true
 );
 
 $frontendData = [
