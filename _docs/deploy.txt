@@ -1,9 +1,6 @@
-сделать фото или нарисовать мою high-level схему
+На деплое название папки - topic-poll.
 
-положить curPollConfig.json d server-side/
-
-Хм, какой-то access у меня браузер на деплое запрашивал (после 5-го шага):
-  Current steps to deploy:
+Current steps to deploy:
   1. Go and build Vue
   2. Paste what's built into deploy/
   3. Change CORS in main.php
@@ -13,4 +10,5 @@
   5. убирать слеши в index.html и в css где шрифты (в шрифтах ещё часть 'assets' убрать). (Мб это фиксится Vite-конфигом)
   6. В main.php поменять в header на https://rainlab.by
   7. В js-файле поменять на https://rainlab.by/ko/topic-poll/server-side/main.php
-........... хз, надеюсь на юзер-компах всё норм будет
+  8. Сделать ../ вместо ../.. в main.php для curPollConfig.json
+
