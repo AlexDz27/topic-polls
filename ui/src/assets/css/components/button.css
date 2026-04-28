@@ -1,0 +1,25 @@
+button {
+  max-width: 380px;
+  font-family: inherit;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.form-btn {
+  display: block;
+  border: 3px solid #8eca8e;
+  max-width: 100%;
+  width: 100%;
+  padding: .5rem;
+}
+.form-btn:active {
+  transform: scale(0.97);
+}

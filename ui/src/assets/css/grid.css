@@ -1,0 +1,15 @@
+.cont {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.main {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
