@@ -13,6 +13,7 @@ onMounted(() => {
     })
 })
 
+const isFormSent = ref(false)
 const formState = ref({
   topic: null,
   comments: null
@@ -34,7 +35,11 @@ function submitForm() {
   })
     .then(r => {
       console.log(r)
-      if (!r.ok) throw new Error(`Server-side error!`);
+      if (!r.ok) {
+        throw new Error(`Server-side error!`);
+      } else {
+        isFormSent.value = true
+      }
     })
     .catch(err => {
       console.log(err)
@@ -51,7 +56,7 @@ function submitForm() {
 </script>
 
 <template>
-  <main class="cont">
+  <main class="cont" v-if="isFormSent === false">
     <div class="c">
       <h1 class="title">Желаемая тема для личного проекта на открытом уроке</h1>
       <p class="i" style="margin-top: 0; margin-bottom: 3rem; font-size: .9em">(опрос анонимный)</p>
@@ -81,5 +86,9 @@ function submitForm() {
 
       <button ref="submitBtn" class="btn form-btn" type="submit">Отправить</button>
     </form>
+  </main>
+
+  <main class="cont" v-else>
+    <h1 class="title c" style="margin-top: 20%; font-size: 3.5em;">Спасибо!</h1>
   </main>
 </template>
