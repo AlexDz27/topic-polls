@@ -13,7 +13,14 @@ $conf = json_decode($confJson, true);
 $part = $conf['group'];
 $db = require 'data/polls/' . $part . '.php';
 
-$db[] = $poll;
+$db[$poll['place']] = [
+  'topic' => $poll['topic'],
+  'comments' => $poll['comments'],
+];
 
 $dbWriter = new PhpArrDbWriter();
 $dbWriter->write($db, 'data/polls/' . $part . '.php');
+
+$badDb = require 'data/polls/' . $part . '.php';
+ksort($badDb);
+$dbWriter->write($badDb, 'data/polls/' . $part . '.php');
