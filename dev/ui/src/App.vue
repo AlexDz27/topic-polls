@@ -23,6 +23,18 @@ function submitForm() {
   const poll = {place, ...formState.value}
 
   console.log(poll)
+
+  fetch('http://localhost/post.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(poll)
+  })
+    .then(r => r.json())
+    .then(r => {
+      console.log(r)
+    })
 }
 </script>
 
