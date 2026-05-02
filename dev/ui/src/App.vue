@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, useTemplateRef } from 'vue'
 
 let topics = ref([])
 onMounted(() => {
@@ -18,6 +18,7 @@ const formState = ref({
   comments: null
 })
 
+const submitBtn = useTemplateRef('submitBtn')
 function submitForm() {
   const place = localStorage.getItem('place')
   const poll = {place, ...formState.value}
@@ -31,9 +32,20 @@ function submitForm() {
     },
     body: JSON.stringify(poll)
   })
-    .then(r => r.json())
     .then(r => {
       console.log(r)
+      if (!r.ok) throw new Error(`Server-side error!`);
+    })
+    .catch(err => {
+      console.log(err)
+      submitBtn.value.disabled = true
+      submitBtn.value.textContent = 'БЫЛА ОШИБКА!!!'
+      submitBtn.value.style.color = 'red'
+      submitBtn.value.style.border = '8px solid red'
+      submitBtn.value.style.fontSize = '3em'
+    })
+    .finally(() => {
+      submitBtn.value.disabled = true
     })
 }
 </script>
@@ -67,7 +79,7 @@ function submitForm() {
         <textarea v-model="formState.comments" class="textarea"></textarea>
       </div>
 
-      <button class="btn form-btn" type="submit">Отправить</button>
+      <button ref="submitBtn" class="btn form-btn" type="submit">Отправить</button>
     </form>
   </main>
 </template>
