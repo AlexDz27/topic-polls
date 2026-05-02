@@ -19,7 +19,10 @@ const formState = ref({
 })
 
 function submitForm() {
-  console.log(formState.value)
+  const place = localStorage.getItem('place')
+  const poll = {place, ...formState.value}
+
+  console.log(poll)
 }
 </script>
 
