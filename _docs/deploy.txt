@@ -9,6 +9,6 @@ Current steps to deploy:
   4. Make zip out of deploy folder's contents. Then upload it onto hosting, extract it
   5. убирать слеши в index.html и в css где шрифты (в шрифтах ещё часть 'assets' убрать). (Мб это фиксится Vite-конфигом)
   6. В main.php поменять в header на https://rainlab.by; то же самое, вроде, в post.php
-  7. В js-файле поменять на https://rainlab.by/ko/topic-poll/server-side/main.php
+  7. В js-файле поменять на https://rainlab.by/ko/topic-poll/server-side/main.php, post.php
   8. Сделать ../ вместо ../.. в main.php для curPollConfig.json
   (9.) Поместить favicon

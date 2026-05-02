@@ -1,6 +1,6 @@
 <?php
 
-header('Access-Control-Allow-Origin: http://localhost:8080');
+header('Access-Control-Allow-Origin: https://rainlab.by');
 
 $curPollConfig = json_decode(
   file_get_contents('data/curPollConfig.json'), true
